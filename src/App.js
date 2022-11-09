@@ -3,22 +3,29 @@ import './App.css';
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import Card from "./components/Card"
+import data from "./data"
 
-function App() {
-  return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <Card 
-        img="katie-zaferes.png"
-        rating="5.0"
-        reviewCount={6}
-        country="Whatever you want"
-        title="Life Lessons with Katie Zaferes"
-        price={136}
-      />
-    </div>
-  );
+export default function App() {
+   <Hero />
+const cards = data.map(item => {
+return (
+  <Card 
+      img={item.coverImg}
+      rating={item.stats.rating}
+      reviewCount={item.stats.reviewCount}
+      location={item.location}
+      title={item.title}
+      price={item.price}
+  />
+)
+})        
+
+return (
+<div>
+  <Navbar />
+  <section className="cards-list">
+      {cards}
+  </section>
+</div>
+)
 }
-
-export default App;
