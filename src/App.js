@@ -6,7 +6,7 @@ import Card from "./components/Card"
 import data from "./data"
 
 export default function App() {
-   <Hero />
+
 const cards = data.map(item => {
 return (
   <Card 
@@ -23,6 +23,7 @@ return (
 return (
 <div>
   <Navbar />
+  <Hero />
   <section className="cards-list">
       {cards}
   </section>
